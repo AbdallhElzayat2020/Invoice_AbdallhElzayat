@@ -1,0 +1,73 @@
+body {
+  font-family: Arial, sans-serif;
+  direction: rtl;
+  text-align: right;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f0f0;
+}
+
+.invoice {
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+.invoice h1 {
+  margin-bottom: 20px;
+  font-size: 2em;
+  color: #333;
+}
+
+.invoice-header {
+  margin-bottom: 20px;
+}
+
+.info-box {
+  background-color: #e9ecef;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.info-box strong {
+  display: block;
+  margin-bottom: 5px;
+  color: #495057;
+}
+
+.line-total {
+  background-color: #e9ecef;
+}
+
+.total {
+  font-size: 1.2em;
+  font-weight: bold;
+  text-align: left;
+  background-color: #e9ecef;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.search-bar {
+  margin-bottom: 20px;
+}
+
+/* إعدادات الطباعة */
+@media print {
+  body {
+    background-color: #fff;
+  }
+  .invoice {
+    width: 100%;
+    box-shadow: none;
+    margin: 0;
+    padding: 0;
+    border: none;
+  }
+  button {
+    display: none;
+  }
+}

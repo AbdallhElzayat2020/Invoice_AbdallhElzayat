@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ar">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>فاتورة</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <div class="container invoice">
+      <h1 class="text-center">فاتورة</h1>
+      <div class="row invoice-header">
+        <div class="col-md-6 client-info">
+          <div class="info-box">
+            <strong>اسم العميل:</strong>
+            <span id="client-name">محمد علي</span>
+          </div>
+          <div class="info-box">
+            <strong>العنوان:</strong>
+            <span id="client-address">123 شارع المثال، المدينة، البلد</span>
+          </div>
+          <div class="info-box">
+            <strong>رقم الهاتف:</strong>
+            <span id="client-phone">0123456789</span>
+          </div>
+          <div class="info-box">
+            <strong>البريد الإلكتروني:</strong>
+            <span id="client-email">example@example.com</span>
+          </div>
+        </div>
+        <div class="col-md-6 invoice-info">
+          <div class="info-box">
+            <strong>التاريخ:</strong>
+            <span id="invoice-date">2024-06-24</span>
+          </div>
+          <div class="info-box">
+            <strong>رقم الفاتورة:</strong>
+            <span id="invoice-number">12345</span>
+          </div>
+        </div>
+      </div>
+      <div class="search-bar mb-3">
+        <input
+          id="search-input"
+          type="text"
+          class="form-control"
+          placeholder="ابحث عن منتج"
+        />
+      </div>
+      <table class="table table-bordered invoice-table">
+        <thead class="thead-light">
+          <tr>
+            <th>الوصف</th>
+            <th>الكمية</th>
+            <th>السعر</th>
+            <th>الإجمالي</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>منتج 1</td>
+            <td>
+              <input type="number" class="form-control quantity" value="2" />
+            </td>
+            <td>
+              <input type="number" class="form-control price" value="50" />
+            </td>
+            <td class="line-total">100</td>
+          </tr>
+          <tr>
+            <td>منتج 2</td>
+            <td>
+              <input type="number" class="form-control quantity" value="1" />
+            </td>
+            <td>
+              <input type="number" class="form-control price" value="150" />
+            </td>
+            <td class="line-total">150</td>
+          </tr>
+          <tr>
+            <td>منتج 3</td>
+            <td>
+              <input type="number" class="form-control quantity" value="3" />
+            </td>
+            <td>
+              <input type="number" class="form-control price" value="30" />
+            </td>
+            <td class="line-total">90</td>
+          </tr>
+          <tr>
+            <td>منتج 4</td>
+            <td>
+              <input type="number" class="form-control quantity" value="5" />
+            </td>
+            <td>
+              <input type="number" class="form-control price" value="20" />
+            </td>
+            <td class="line-total">100</td>
+          </tr>
+          <tr>
+            <td>منتج 5</td>
+            <td>
+              <input type="number" class="form-control quantity" value="4" />
+            </td>
+            <td>
+              <input type="number" class="form-control price" value="25" />
+            </td>
+            <td class="line-total">100</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="total">
+        <strong>الإجمالي:</strong>
+        <span id="total-amount">540</span>
+      </div>
+      <button id="print-btn" class="btn btn-success btn-block">
+        طباعة الفاتورة
+      </button>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
