@@ -1,54 +1,83 @@
 <!DOCTYPE html>
 <html lang="ar">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>فاتورة</title>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <div class="invoice">
-      <h1>فاتورة</h1>
-      <div class="invoice-details">
-        <div>
-          <strong>التاريخ:</strong> <span id="invoice-date">2024-06-24</span>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="container invoice">
+        <h1 class="text-center">فاتورة</h1>
+        <div class="row invoice-header">
+            <div class="col-md-6 client-info">
+                <div class="info-box">
+                    <strong>اسم العميل:</strong>
+                    <input type="text" id="client-name" class="form-control" placeholder="أدخل اسم العميل">
+                    <span class="print-only"></span>
+                </div>
+                <div class="info-box">
+                    <strong>العنوان:</strong>
+                    <input type="text" id="client-address" class="form-control" placeholder="أدخل العنوان">
+                    <span class="print-only"></span>
+                </div>
+                <div class="info-box">
+                    <strong>رقم الهاتف:</strong>
+                    <input type="text" id="client-phone" class="form-control" placeholder="أدخل رقم الهاتف">
+                    <span class="print-only"></span>
+                </div>
+                <div class="info-box">
+                    <strong>البريد الإلكتروني:</strong>
+                    <input type="email" id="client-email" class="form-control" placeholder="أدخل البريد الإلكتروني">
+                    <span class="print-only"></span>
+                </div>
+            </div>
+            <div class="col-md-6 invoice-info">
+                <div class="info-box">
+                    <strong>التاريخ:</strong>
+                    <input type="date" id="invoice-date" class="form-control" value="2024-06-24">
+                    <span class="print-only"></span>
+                </div>
+                <div class="info-box">
+                    <strong>رقم الفاتورة:</strong>
+                    <input type="text" id="invoice-number" class="form-control" placeholder="أدخل رقم الفاتورة">
+                    <span class="print-only"></span>
+                </div>
+            </div>
         </div>
-        <div>
-          <strong>رقم الفاتورة:</strong> <span id="invoice-number">12345</span>
+        <div class="search-bar mb-3">
+            <input id="search-input" type="text" class="form-control" placeholder="ابحث عن منتج">
         </div>
-        <div>
-          <strong>اسم العميل:</strong> <span id="client-name">محمد علي</span>
+        <table class="table table-bordered invoice-table">
+            <thead class="thead-light">
+                <tr>
+                    <th>الوصف</th>
+                    <th>الكمية</th>
+                    <th>السعر</th>
+                    <th>الإجمالي</th>
+                    <th>إجراءات</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><input type="text" class="form-control description" placeholder="أدخل وصف المنتج"></td>
+                    <td><input type="number" class="form-control quantity" placeholder="الكمية" value="0"></td>
+                    <td><input type="number" class="form-control price" placeholder="السعر" value="0"></td>
+                    <td class="line-total">0</td>
+                    <td><button class="btn btn-danger remove-row">حذف</button></td>
+                </tr>
+            </tbody>
+        </table>
+        <button id="add-row" class="btn btn-primary mb-3">إضافة منتج</button>
+        <div class="total">
+            <strong>الإجمالي:</strong>
+            <span id="total-amount">0</span>
         </div>
-      </div>
-      <table class="invoice-table">
-        <thead>
-          <tr>
-            <th>الوصف</th>
-            <th>الكمية</th>
-            <th>السعر</th>
-            <th>الإجمالي</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>منتج 1</td>
-            <td>2</td>
-            <td>50</td>
-            <td>100</td>
-          </tr>
-          <tr>
-            <td>منتج 2</td>
-            <td>1</td>
-            <td>150</td>
-            <td>150</td>
-          </tr>
-        </tbody>
-      </table>
-      <div class="total">
-        <strong>الإجمالي:</strong> <span id="total-amount">250</span>
-      </div>
-      <button onclick="printInvoice()">طباعة الفاتورة</button>
+        <button id="print-btn" class="btn btn-success btn-block">طباعة الفاتورة</button>
     </div>
     <script src="script.js"></script>
-  </body>
+</body>
 </html>

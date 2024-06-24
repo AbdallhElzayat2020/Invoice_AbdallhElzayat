@@ -55,19 +55,35 @@ body {
   margin-bottom: 20px;
 }
 
+.print-only {
+  display: none;
+}
+
 /* إعدادات الطباعة */
 @media print {
   body {
-    background-color: #fff;
+      background-color: #fff;
   }
   .invoice {
-    width: 100%;
-    box-shadow: none;
-    margin: 0;
-    padding: 0;
-    border: none;
+      width: 100%;
+      box-shadow: none;
+      margin: 0;
+      padding: 0;
+      border: none;
   }
-  button {
-    display: none;
+  .form-control, .btn, .search-bar {
+      display: none !important;
+  }
+  .info-box span {
+      display: block;
+  }
+  .invoice-table input {
+      display: none;
+  }
+  .invoice-table th:last-child, .invoice-table td:last-child {
+      display: none;
+  }
+  .print-only {
+      display: inline;
   }
 }
